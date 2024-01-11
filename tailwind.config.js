@@ -12,4 +12,8 @@ module.exports = {
     extend: {},
   },
   plugins: [],
+  corePlugins: {
+    //css reset 코드 활성화: 디폴트가 true임
+    preflight: false,
+  },
 };
