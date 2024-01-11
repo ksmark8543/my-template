@@ -15,10 +15,13 @@ export default function MenuLayout({
       </div>
       {/* left */}
       <div className="flex bg-slate-50">
-        <div className="h-screen py-6 text-white w-60 rounded-tr-3xl bg-slate-400">
+        <div className="h-screen py-10 text-white w-[280px] rounded-tr-3xl bg-slate-600">
           <div className="flex items-center px-3 font-bold">
-            <div className="flex gap-2">
-              <HomeOutlined />
+            <div className="flex px-2">
+              <div className="pr-2">
+                <HomeOutlined />
+              </div>
+
               <div>메인&대시보드</div>
             </div>
             <UpOutlined className="ml-auto" />
