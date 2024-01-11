@@ -1,8 +1,19 @@
+import Link from "next/link";
+
 // import Image from "next/image";
 export default function Home() {
-  return <main>
-    <div>my-template</div>
-  </main>
+  return (
+    <main>
+      <div className="flex items-center justify-center h-screen">
+        <div>
+          <div className="mb-2">my-template</div>
+          <div className="text-3xl font-bold">
+            <Link href={"/login"}>로그인하러 가기</Link>
+          </div>
+        </div>
+      </div>
+    </main>
+  );
 }
 // export default function Home() {
 //   return (
