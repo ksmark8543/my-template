@@ -6,7 +6,7 @@ export default function Home() {
     <main>
       <div className="flex items-center justify-center h-screen">
         <div>
-          <div className="mb-2">my-template</div>
+          <div className="mb-2">walkinig-view-admin</div>
           <div className="text-3xl font-bold">
             <Link href={"/login"}>로그인하러 가기</Link>
           </div>
