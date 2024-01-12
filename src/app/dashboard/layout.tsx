@@ -1,7 +1,7 @@
 import { MenuOutlined, HomeOutlined, UpOutlined } from "@ant-design/icons";
 import { Button } from "antd";
-import Navbar from "~/ui/dashboard/navbar/Navbar";
-import Sidebar from "~/ui/dashboard/sidebar/Sidebar";
+import Navbar from "~/ui/admin/navbar/Navbar";
+import Sidebar from "~/ui/admin/sidebar/Sidebar";
 
 export default function MenuLayout({
   children,

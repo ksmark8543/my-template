@@ -9,7 +9,7 @@ export default function LoginPage() {
 
   //로그인
   const login = () => {
-    router.push("/dashboard");
+    router.push("/admin/dashboard");
   };
   return (
     <section className="flex items-center justify-center h-screen bg-slate-500">

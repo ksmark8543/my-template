@@ -1,7 +1,7 @@
 import { MenuOutlined, HomeOutlined, UpOutlined } from "@ant-design/icons";
 import { Button } from "antd";
-import Navbar from "~/ui/dashboard/navbar/Navbar";
-import Sidebar from "~/ui/dashboard/sidebar/Sidebar";
+import Navbar from "~/ui/admin/navbar/Navbar";
+import Sidebar from "~/ui/admin/sidebar/Sidebar";
 
 export default function AdminLayout({
   children,
@@ -13,10 +13,10 @@ export default function AdminLayout({
       <div>
         <Navbar />
       </div>
-      <div>
+      <div className="flex bg-slate-50">
         <Sidebar />
+        <div className="p-3">{children}</div>
       </div>
-      {children}
     </div>
   );
 }
