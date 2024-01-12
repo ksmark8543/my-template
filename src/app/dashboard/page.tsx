@@ -7,7 +7,7 @@ export default function DataSearchCmnPage() {
   // const [isOpen, setOpen] = useState(false);
 
   // const toggle = () => setOpen(!isOpen);
-  return <div>Dashboard</div>;
+  return <div>대시보드</div>;
   // return (
   //   <div>
   //     <div className="flex items-center justify-between mb-3">
