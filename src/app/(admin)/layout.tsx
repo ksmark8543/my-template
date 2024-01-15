@@ -1,8 +1,7 @@
-import { MenuOutlined, HomeOutlined, UpOutlined } from "@ant-design/icons";
-import { Button } from "antd";
 import Navbar from "~/components/admin/navbar/Navbar";
 import Sidebar from "~/components/admin/sidebar/Sidebar";
-import PageNameHook from "~/components/hooks/MenuNameHook";
+import LogoutButtonHook from "~/components/hooks/LogoutButtonHook";
+import PageNameHook from "~/components/hooks/PageNameHook";
 
 export default function AdminLayout({
   children,
@@ -12,7 +11,7 @@ export default function AdminLayout({
   return (
     <div>
       <div>
-        <Navbar />
+        <Navbar userName="제이든님" logout={<LogoutButtonHook />} />
       </div>
       <div className="flex bg-slate-50">
         <Sidebar />

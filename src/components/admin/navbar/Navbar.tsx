@@ -2,16 +2,22 @@ import { Button, Space } from "antd";
 import React from "react";
 import { MdOutlineMenu } from "react-icons/md";
 
-const Navbar = () => {
+const Navbar = ({
+  userName = "",
+  logout,
+}: {
+  userName?: string;
+  logout?: React.ReactNode;
+}) => {
   return (
     <section className="flex justify-between p-5 ">
-      <div className="flex items-center">
+      <div className="flex items-center gap-2">
         <MdOutlineMenu size={30} />
         <span>농장산책</span>
       </div>
-      <div className="flex gap-3">
-        <div>농장산책관리자</div>
-        <div>로그아웃</div>
+      <div className="flex items-center gap-3">
+        <div className="text-sm font-bold text-slate-700">{userName}</div>
+        {logout}
       </div>
     </section>
   );
