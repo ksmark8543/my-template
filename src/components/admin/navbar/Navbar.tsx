@@ -1,6 +1,6 @@
 import { Button, Space } from "antd";
 import React from "react";
-import { MdOutlineMenu } from "react-icons/md";
+import { MdOutlineMenu, MdOutlineEmojiEmotions } from "react-icons/md";
 
 const Navbar = ({
   userName = "",
@@ -16,7 +16,10 @@ const Navbar = ({
         <span>농장산책</span>
       </div>
       <div className="flex items-center gap-3">
-        <div className="text-sm font-bold text-slate-700">{userName}</div>
+        <div className="flex items-center gap-1 text-sm font-bold text-slate-700">
+          <MdOutlineEmojiEmotions size={20} />
+          {userName}
+        </div>
         {logout}
       </div>
     </section>
