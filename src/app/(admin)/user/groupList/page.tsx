@@ -1,3 +1,10 @@
+'use client';
+import styled from "styled-components";
+
+const AADiv= styled.div`
+  p-10
+`;
+
 import React from "react";
 import { fakeAsyncOperation } from "~/helper/fake";
 
