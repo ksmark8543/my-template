@@ -2,84 +2,84 @@
   "users": [
     {
       "id": "1",
-      "grpName": "팜스올관리자",
-      "userType": "관리자",
+      "grpName": "함평농업기술센터",
+      "userType": "일반농가",
       "regDate": "2022-04-29",
       "useYN": "Y"
     },
     {
       "id": "2",
-      "grpName": "another title",
+      "grpName": "팜스올컨설턴트",
       "userType": "일반농가",
       "regDate": "2022-04-29",
       "useYN": "Y"
     },
     {
       "id": "1",
+      "grpName": "팜스올농가",
+      "userType": "일반농가",
+      "regDate": "2022-04-29",
+      "useYN": "Y"
+    },
+    {
+      "id": "2",
       "grpName": "팜스올관리자",
       "userType": "관리자",
       "regDate": "2022-04-29",
       "useYN": "Y"
     },
     {
+      "id": "1",
+      "grpName": "충청 컨설턴트",
+      "userType": "일반농가",
+      "regDate": "2022-04-29",
+      "useYN": "Y"
+    },
+    {
       "id": "2",
-      "grpName": "another title",
+      "grpName": "전북 컨설턴트",
       "userType": "일반농가",
       "regDate": "2022-04-29",
       "useYN": "Y"
     },
     {
       "id": "1",
-      "grpName": "팜스올관리자",
-      "userType": "관리자",
+      "grpName": "전남 컨설턴트",
+      "userType": "일반농가",
       "regDate": "2022-04-29",
       "useYN": "Y"
     },
     {
       "id": "2",
-      "grpName": "another title",
+      "grpName": "소하테크",
       "userType": "일반농가",
       "regDate": "2022-04-29",
       "useYN": "Y"
     },
     {
       "id": "1",
-      "grpName": "팜스올관리자",
-      "userType": "관리자",
+      "grpName": "논산기술센터",
+      "userType": "일반농가",
       "regDate": "2022-04-29",
       "useYN": "Y"
     },
     {
       "id": "2",
-      "grpName": "another title",
+      "grpName": "경북 컨설턴트",
       "userType": "일반농가",
       "regDate": "2022-04-29",
       "useYN": "Y"
     },
     {
       "id": "1",
-      "grpName": "팜스올관리자",
-      "userType": "관리자",
-      "regDate": "2022-04-29",
-      "useYN": "Y"
-    },
-    {
-      "id": "2",
-      "grpName": "another title",
+      "grpName": "경남 컨설턴트",
       "userType": "일반농가",
       "regDate": "2022-04-29",
       "useYN": "Y"
     },
     {
-      "id": "1",
-      "grpName": "팜스올관리자",
-      "userType": "관리자",
-      "regDate": "2022-04-29",
-      "useYN": "Y"
-    },
-    {
       "id": "2",
-      "grpName": "another title",
+      "grpName": "경기,강원,충청 컨설턴트",
       "userType": "일반농가",
       "regDate": "2022-04-29",
       "useYN": "Y"
