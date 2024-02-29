@@ -3,8 +3,9 @@
 import {RequesterClient, RequesterPromiseClient} from '../../../protos/generated/smartLink_grpc_web_pb'
 import sm from '../../../protos/generated/smartLink_pb'
 
-// const serverUrl = 'http://192.168.0.117:50051'; // 서버의 주소와 포트에 맞게 변경
-const serverUrl = 'http://localhost:50051'; // 서버의 주소와 포트에 맞게 변경
+const serverUrl = 'http://192.168.0.117:50051'; // 서버의 주소와 포트에 맞게 변경
+// const serverUrl = 'http://localhost:50051'; // 서버의 주소와 포트에 맞게 변경
+// const serverUrl = '211.63.33.45:50051'; // 서버의 주소와 포트에 맞게 변경
 
 const promiseClient = new RequesterPromiseClient(serverUrl);
 const client = new RequesterClient(serverUrl);
