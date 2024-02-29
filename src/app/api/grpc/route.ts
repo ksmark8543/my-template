@@ -1,10 +1,10 @@
 import { NextResponse, NextRequest } from 'next/server';
-import { NextApiRequest, NextApiResponse } from 'next';
-import services from '../../../protos/generated/smartLink_grpc_web_pb'
-import messages from '../../../protos/generated/smartLink_pb'
-import grpc from '@grpc/grpc-js'
-import protoLoader from '@grpc/proto-loader'
-import {equipmentControl} from '../../../lib/grpc-promise'
+// import { NextApiRequest, NextApiResponse } from 'next';
+// import services from '../../../protos/generated/smartLink_grpc_web_pb'
+// import messages from '../../../protos/generated/smartLink_pb'
+// import grpc from '@grpc/grpc-js'
+// import protoLoader from '@grpc/proto-loader'
+import {equipmentControl, equipmentControlPromise} from '../../../lib/grpc-promise'
 //제너레이터 코드
 /*
 protoc --proto_path=. smartLink.proto --grpc-web_out=import_style=commonjs,mode=grpcwebtext:.\generated --js_out=import_style=commonjs,binary:.\generated --plugin=protoc-gen-grpc-web=C:\protoc-25.3-win64\bin\protoc-gen-grpc-web.exe 
@@ -18,8 +18,8 @@ protoc --proto_path=. smartLink.proto --js_out=import_style=closure,mode=grpcweb
 */
 
 
-// const serverUrl = 'http://192.168.0.117:50051'; // 서버의 주소와 포트에 맞게 변경
-const serverUrl = 'localhost:50051'; // 서버의 주소와 포트에 맞게 변경
+// const serverUrl = '192.168.0.117:50051'; // 서버의 주소와 포트에 맞게 변경
+// const serverUrl = 'http://localhost:50051'; // 서버의 주소와 포트에 맞게 변경
 // const promiseClient = new RequesterPromiseClient(serverUrl);
 
 // const client = new RequesterClient(serverUrl);
@@ -39,16 +39,16 @@ const serverUrl = 'localhost:50051'; // 서버의 주소와 포트에 맞게 변
 
 // const prisma = new PrismaClient();
 
-function sayHello(call:any, callback:any) {
-  var order = new messages.Order();
-  order.setEquipmentId(1);
-  order.setAct("on");
-  order.setValue(100);
+// function sayHello(call:any, callback:any) {
+//   var order = new messages.Order();
+//   order.setEquipmentId(1);
+//   order.setAct("on");
+//   order.setValue(100);
 
   
 
-  callback(order);
-}
+//   callback(order);
+// }
 
 /*
 export async function POST(request: NextRequest) {
@@ -71,8 +71,19 @@ export async function POST(request: NextRequest) {
 }
 */
 
-export async function POST(request: NextRequest) {
+/*export async function POST(request: NextRequest) {
   
   return await equipmentControl();
+  
+}
+*/
+
+export async function POST(request: NextRequest) {
+  //500
+  const res = await equipmentControl();
+
+  // const res = await equipmentControlPromise();
+  
+  return NextResponse.json(res);
   
 }

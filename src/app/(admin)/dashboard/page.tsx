@@ -2,11 +2,11 @@
 'use client'
 import {RequesterClient, RequesterPromiseClient} from '../../../protos/generated/smartLink_grpc_web_pb'
 import sm from '../../../protos/generated/smartLink_pb'
-import {equipmentControl} from '../../../lib/grpc-promise'
+import {equipmentControl, equipmentControlPromise} from '../../../lib/grpc-promise'
 
 
 
-const serverUrl = 'http://192.168.0.117:50051'; // 서버의 주소와 포트에 맞게 변경
+const serverUrl = '192.168.0.117:50051'; // 서버의 주소와 포트에 맞게 변경
 // const serverUrl = 'http://localhost:50051'; // 서버의 주소와 포트에 맞게 변경
 // const serverUrl = '211.63.33.45:50051'; // 서버의 주소와 포트에 맞게 변경
 
@@ -27,14 +27,22 @@ export default function DashboardPage() {
   // }
   const postGrpc = async () => {
     try{
-      // await fetch('/api/grpc', {method:'POST', headers: {
-        // "Access-Control-Allow-Origin": "*",
-        //     "Content-Type": "application/grpc-web-text"
-      // }});
+
+      // const res = await fetch('/api/hello');
+      
+
+      // const res = await fetch('/api/grpc', {method:'POST'});
+      // console.log({res});
+
+      //404 error code 2
       const res = await equipmentControl();
-        console.log({res});
+      //404 error code 2
+      // const res = await equipmentControlPromise();
+
+      console.log({res});
+       
     }catch(e) {
-      console.log(e)
+      // console.log(e)
       alert('error')
     }
   }
