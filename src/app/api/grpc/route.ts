@@ -75,7 +75,4 @@ export async function POST(request: NextRequest) {
   
   return await equipmentControl();
   
-
-  // const searchParams = request.nextUrl.searchParams;
-  // return NextResponse.json({ hello: `success` });
 }

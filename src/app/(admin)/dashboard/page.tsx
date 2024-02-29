@@ -27,11 +27,15 @@ export default function DashboardPage() {
   // }
   const postGrpc = async () => {
     try{
-      // await fetch('/api/grpc', {method:'POST'});
+      // await fetch('/api/grpc', {method:'POST', headers: {
+        // "Access-Control-Allow-Origin": "*",
+        //     "Content-Type": "application/grpc-web-text"
+      // }});
       const res = await equipmentControl();
         console.log({res});
     }catch(e) {
       console.log(e)
+      alert('error')
     }
   }
   return (<div>
