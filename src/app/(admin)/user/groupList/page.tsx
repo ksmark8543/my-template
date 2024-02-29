@@ -34,45 +34,45 @@ export default function UserListPage() {
   const [dataSource, setDataSource] = useState([]);
   const [isLoading, setLoading] = useState(true);
   const columns = [
-    {
-      title: "#",
-      dataIndex: "id",
-      key: "id",
-      sorter: (a, b) => a.id - b.id,
-      width: "100px",
-      // className: "text-center",
-      // align: "center",
+    // {
+    //   title: "#",
+    //   dataIndex: "id",
+    //   key: "id",
+    //   sorter: (a, b) => a.id - b.id,
+    //   width: "100px",
+    //   // className: "text-center",
+    //   // align: "center",
 
-      // sortDirections: ["descend"],
-    },
-    {
-      title: "그룹명",
-      dataIndex: "grpName",
-      // key: "grpName",
-      sorter: (a, b) => a.grpName.localeCompare(b.grpName),
-      // sortDirections: ["descend"],
-    },
-    {
-      title: "사용자구분",
-      dataIndex: "userType",
-      // key: "userType",
-      sorter: (a, b) => a.grpName.localeCompare(b.grpName),
-      // sortDirections: ["descend"],
-    },
-    {
-      title: "등록일",
-      dataIndex: "regDate",
-      // key: "regDate",
-      sorter: (a, b) => a.grpName.localeCompare(b.grpName),
-      // sortDirections: ["descend"],
-    },
-    {
-      title: "사용여부",
-      dataIndex: "useYN",
-      // key: "useYN",
-      sorter: (a, b) => a.grpName.localeCompare(b.grpName),
-      // sortDirections: ["descend"],
-    },
+    //   // sortDirections: ["descend"],
+    // },
+    // {
+    //   title: "그룹명",
+    //   dataIndex: "grpName",
+    //   // key: "grpName",
+    //   sorter: (a, b) => a.grpName.localeCompare(b.grpName),
+    //   // sortDirections: ["descend"],
+    // },
+    // {
+    //   title: "사용자구분",
+    //   dataIndex: "userType",
+    //   // key: "userType",
+    //   sorter: (a, b) => a.grpName.localeCompare(b.grpName),
+    //   // sortDirections: ["descend"],
+    // },
+    // {
+    //   title: "등록일",
+    //   dataIndex: "regDate",
+    //   // key: "regDate",
+    //   sorter: (a, b) => a.grpName.localeCompare(b.grpName),
+    //   // sortDirections: ["descend"],
+    // },
+    // {
+    //   title: "사용여부",
+    //   dataIndex: "useYN",
+    //   // key: "useYN",
+    //   sorter: (a, b) => a.grpName.localeCompare(b.grpName),
+    //   // sortDirections: ["descend"],
+    // },
     {
       title: "관리",
       dataIndex: "manage",
