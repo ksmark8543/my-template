@@ -31,11 +31,11 @@ export default function DashboardPage() {
       // const res = await fetch('/api/hello');
       
 
-      // const res = await fetch('/api/grpc', {method:'POST'});
+      const res = await fetch('/api/grpc', {method:'POST'});
       // console.log({res});
 
       //404 error code 2
-      const res = await equipmentControl();
+      // const res = await equipmentControl();
       //404 error code 2
       // const res = await equipmentControlPromise();
 

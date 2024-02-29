@@ -78,12 +78,34 @@ export async function POST(request: NextRequest) {
 }
 */
 
-export async function POST(request: NextRequest) {
-  //500
-  const res = await equipmentControl();
+// export default async function POST(request: NextRequest) {
+//   //500
+//   const res = await equipmentControl();
 
-  // const res = await equipmentControlPromise();
+//   // const res = await equipmentControlPromise();
   
-  return NextResponse.json(res);
+//   return NextResponse.json(res);
+  
+// }
+
+
+
+const POST = async (request: NextRequest) => {
+  //500
+  // const res = await equipmentControl();
+
+  const res = await equipmentControlPromise();
+  
+  return Response.json(res);
+
+  // return NextResponse.json(res);
   
 }
+const GET = async (request: NextRequest) => {
+  
+  return Response.json({ok:"ok"});
+
+  // return NextResponse.json(res);
+  
+}
+export {GET, POST}
