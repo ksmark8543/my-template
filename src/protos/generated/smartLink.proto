@@ -1,0 +1,145 @@
+syntax = "proto3";
+
+// 해당 파일이 속한 패키지를 지정한다.
+// 언어에 따라 다르게 생성된다.
+// java : package
+// c# : csharp_namespace
+// js : package
+// python : package
+// Dart : package
+
+package requester;
+
+
+service Requester {
+    //개별 장비 수동제어
+    rpc process_schedule (Schedule) returns (ResultReply){}
+    rpc equipment_control (Order) returns (ResultReply){}
+    rpc equipment_group_control (GroupOrder) returns (ResultReply){}
+    rpc set_equipment (Equipment) returns (ResultReply){}
+    rpc set_equipment_group (EquipmentGroup) returns (ResultReply){}
+    rpc set_window_open_close (Window) returns (ResultReply){}
+    rpc reload_equipment_request (ReloadMessage) returns (ResultReply) {}
+    rpc reload_schedule_request (ReloadMessage) returns (ResultReply) {}
+    
+}
+
+message ReloadMessage {
+    string request_time =1;
+    string request_type =2;
+
+}
+
+
+
+message Equipment {
+    string act=1;
+    int32 equipment_id = 2;
+    string equipment_type=3;
+    string name=4;
+    int32 status_register_start = 5;
+    int32 control_register_start = 6;
+}
+message EquipmentGroup {
+    string act=1; 
+    int32 equipment_group_id = 2;
+    string equipment_type=3;
+    string name=4;
+    repeated int32 equipment_ids = 5;
+
+}
+
+
+
+message Window{
+    int32 equipment_id = 1;
+    int32 open_time =2;
+    int32 close_time = 3;
+}
+
+
+message Schedule {
+    int32 schedule_id = 1;
+    string name = 2;
+    string type = 3;
+    TimeCondition timeCondition = 4;
+    repeated SensorConditions sensorConditions = 5;
+    repeated AllOrder orders = 6;
+    string act = 7;
+
+
+}
+
+message TimeCondition {
+
+    TimeInfo start_time = 1;
+    TimeInfo end_time = 2;
+    Interval interval = 3;
+    repeated int32 day = 4;
+}
+
+message TimeInfo {
+    int32 hour = 1;
+    int32 minute = 2;
+    SunInfo sunInfo = 3; 
+}
+
+message SunInfo {
+    string sun_type = 1;
+    string time  =2;
+}
+
+message Interval {
+   string select_date =1;
+   string unit = 2;
+   int32 value = 3; 
+}
+
+
+message SensorConditions {
+    repeated SensorCondition sensorCondition= 1 ;
+    repeated SensorGroupCondition sensorGroupCondition =2 ;
+
+
+}
+
+message SensorCondition{
+    // int32 sensor_id =1;
+    string sensor_id = 1;
+    int32 sensor_up = 2;
+    int32 sensor_down =3;
+}
+message SensorGroupCondition{
+    // int32 sensor_group_id = 1;
+    string sensor_group_id = 1 ;
+    string sensor_use = 2 ;
+    int32 sensor_group_up = 3;
+    int32 sensor_group_down = 4;
+
+}
+
+
+
+message Order {
+    int32 equipment_id = 1;
+    string act = 2;
+    int32 value = 3;
+}
+
+message GroupOrder {
+    int32 equipment_group_id = 1;
+    string act = 2;
+    int32 value = 3;    
+}
+
+message AllOrder{
+    repeated Order orders = 1;
+    repeated GroupOrder groupOrders =2;
+}
+
+
+message ResultReply {
+    string request_name = 1;
+    bool success = 2;
+    string log = 3;
+}
