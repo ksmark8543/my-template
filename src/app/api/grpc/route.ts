@@ -138,7 +138,7 @@ var packageDefinition = protoLoader.loadSync(
      oneofs: true
     });
 var Requester = grpc.loadPackageDefinition(packageDefinition).Requester;
-var client = new Requester('http://localhost:50051', grpc.credentials.createInsecure());
+var client = new Requester('192.168.0.117:50051', grpc.credentials.createInsecure());
 
 // var client = new Requester('localhost:50051', grpc.credentials.createInsecure());
 
