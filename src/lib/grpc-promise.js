@@ -50,29 +50,26 @@ var PROTO_PATH ="../protos/smartLink.proto";//자기 파일 경로로 바꾸기
 var grpc = require('@grpc/grpc-js');
 var protoLoader = require('@grpc/proto-loader')
 
-
-export async function equipmentControl(id,act,value){
-    var packageDefinition = protoLoader.loadSync(
-        PROTO_PATH,
-        {keepCase: true,
-         longs: String,
-         enums: String,
-         defaults: true,
-         oneofs: true
-        });
-    var Requester = grpc.loadPackageDefinition(packageDefinition).Requester;
-    var client = new Requester('localhost:50051',
-                                           grpc.credentials.createInsecure());
-    
-    return new Promise((resolve, reject) => {
-        client.equipment_control({
-            equipment_id:id,
-            act:act,
-            value:value
-        },(error,result)=>{
-            if (error) throw error;
-            console.log(result)
-            resolve(result);
-        });
+var packageDefinition = protoLoader.loadSync(
+    PROTO_PATH,
+    {keepCase: true,
+     longs: String,
+     enums: String,
+     defaults: true,
+     oneofs: true
     });
+var Requester = grpc.loadPackageDefinition(packageDefinition).Requester;
+var client = new Requester('192.168.0.117:50051',
+                                       grpc.credentials.createInsecure());
+
+                                       
+export async function equipmentControl() {
+    return new Promise((resolve, reject) => {
+        resolve({name:'jaden'});
+    })
 }
+
+
+  export function doSomething() {
+    return {name:'jaden'}
+  }

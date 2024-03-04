@@ -30,16 +30,11 @@ export default function DashboardPage() {
 
       // const res = await fetch('/api/hello');
       
-
       const res = await fetch('/api/grpc', {method:'POST'});
-      // console.log({res});
+      const data = await res.json()
+      alert(data.success);
 
-      //404 error code 2
-      // const res = await equipmentControl();
-      //404 error code 2
-      // const res = await equipmentControlPromise();
-
-      console.log({res});
+      console.log(data);
        
     }catch(e) {
       // console.log(e)
