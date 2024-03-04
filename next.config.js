@@ -1,4 +1,7 @@
 /** @type {import('next').NextConfig} */
+// import path from 'path'
+const path = require('path')
+const PROTO_PATH = path.join(process.cwd(), 'src/protos');
 const nextConfig = {
     compiler: {
       // Enables the styled-components SWC transform
@@ -18,6 +21,13 @@ const nextConfig = {
               ]
           }
       ]
-  }
+  },
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      // 프로토 파일이 있는 디렉토리를 Next.js 빌드 구성에 추가
+      config.resolve.modules.push(PROTO_PATH);
+    }
+    return config;
+  },
 }
 module.exports = nextConfig

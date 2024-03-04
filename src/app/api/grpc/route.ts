@@ -7,7 +7,6 @@ import messages from '../../../protos/generated/smartLink_pb'
 // import protoLoader from '@grpc/proto-loader'
 import {doSomething, equipmentControl, equipmentControlPromise} from '../../../lib/grpc-promise'
 import path from 'path'
-const PROTO_PATH = path.join(process.cwd(), 'proto/smartLink.proto');
 
 //제너레이터 코드
 /*
