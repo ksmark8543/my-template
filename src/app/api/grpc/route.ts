@@ -92,9 +92,9 @@ export async function POST(request: NextRequest) {
 
 const POST = async (request: NextRequest) => {
   //500
-  // const res = await equipmentControl();
+  const res = await equipmentControl();
 
-  const res = await equipmentControlPromise();
+  // const res = await equipmentControlPromise();
   
   return Response.json(res);
 

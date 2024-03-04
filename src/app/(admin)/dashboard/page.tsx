@@ -1,7 +1,7 @@
 
 'use client'
-import {RequesterClient, RequesterPromiseClient} from '../../../protos/generated/smartLink_grpc_web_pb'
-import sm from '../../../protos/generated/smartLink_pb'
+import {RequesterClient, RequesterPromiseClient} from '../../../protos/smartLink_grpc_web_pb'
+import sm from '../../../protos/smartLink_pb'
 import {equipmentControl, equipmentControlPromise} from '../../../lib/grpc-promise'
 
 

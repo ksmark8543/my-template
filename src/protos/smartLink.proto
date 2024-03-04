@@ -1,16 +1,5 @@
 syntax = "proto3";
 
-// 해당 파일이 속한 패키지를 지정한다.
-// 언어에 따라 다르게 생성된다.
-// java : package
-// c# : csharp_namespace
-// js : package
-// python : package
-// Dart : package
-
-package requester;
-
-
 service Requester {
     //개별 장비 수동제어
     rpc process_schedule (Schedule) returns (ResultReply){}
