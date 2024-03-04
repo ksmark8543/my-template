@@ -6,7 +6,8 @@ import messages from '../../../protos/generated/smartLink_pb'
 // import grpc from '@grpc/grpc-js'
 // import protoLoader from '@grpc/proto-loader'
 import {doSomething, equipmentControl, equipmentControlPromise} from '../../../lib/grpc-promise'
-
+import path from 'path'
+const PROTO_PATH = path.join(process.cwd(), 'proto/smartLink.proto');
 
 //제너레이터 코드
 /*
@@ -121,8 +122,9 @@ export async function POST(request: NextRequest, response: NextResponse) {
 
 
   
+  const PROTO_PATH = path.join(process.cwd(), 'src/protos/smartLink.proto');
 
-var PROTO_PATH ="D:/smartLink.proto";//자기 파일 경로로 바꾸기 
+// var PROTO_PATH ="D:/smartLink.proto";//자기 파일 경로로 바꾸기 
 
 var grpc = require('@grpc/grpc-js');
 var protoLoader = require('@grpc/proto-loader')
@@ -136,15 +138,16 @@ var packageDefinition = protoLoader.loadSync(
      oneofs: true
     });
 var Requester = grpc.loadPackageDefinition(packageDefinition).Requester;
-var client = new Requester('192.168.0.117:50051',
-                                       grpc.credentials.createInsecure());
+var client = new Requester('localhost:50051', grpc.credentials.createInsecure());
+
+// var client = new Requester('localhost:50051', grpc.credentials.createInsecure());
 
 async function doSomething() {
   return new Promise((resolve, reject) => {
     client.equipment_control({
       equipment_id:1,
       act:'on',
-      value:70
+      value:100
   },(error:any,result:any)=>{
       if (error) throw error;
       console.log({result})
